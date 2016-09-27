@@ -1,8 +1,8 @@
 var httpServer = require("http-server");
 var path = require("path");
 
-var pathToHtmlAndJsFiles = path.join(__dirname, "src");
-var server = httpServer.createServer({ root: pathToHtmlAndJsFiles });
+var filePath = path.join(__dirname, "");
+var server = httpServer.createServer({ root: filePath });
 
 server.listen(3000);
 console.log(__dirname, "");

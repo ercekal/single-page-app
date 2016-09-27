@@ -16,6 +16,7 @@ ready(function(){
   document.getElementById('create_note').onclick = function(){
     var text = document.getElementById('notes_input').value;
     var note = new Note(text);
+    console.log(note);
     note.save();
   };
 });
