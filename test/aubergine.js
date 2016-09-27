@@ -7,5 +7,3 @@ var assert = {
    }
  }
 };
-
-module.exports = assert;
