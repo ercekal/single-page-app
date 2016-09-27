@@ -8,7 +8,6 @@ function ready(fn) {
   } else {
     document.addEventListener('DOMContentLoaded', fn);
   }
-  console.log("ready");
 }
 
 ready(function(){
@@ -19,7 +18,6 @@ ready(function(){
     var text = document.getElementById('notes_input').value;
     var note = new Note(text);
     list.save(note);
-    console.log(list);
     listNotes();
     // document.getElementById("listing").innerHTML = list.notes[0].text;
   };
@@ -27,11 +25,10 @@ ready(function(){
 
 
   function listNotes() {
-      for (i=0; i<(list.notes.length); i++)
-      var t = list.notes[i].text;
-    {
-      document.getElementById("listing").innerHTML = t;
-      console.log(list.notes);
-    }
+      var ul = document.getElementById("list");
+      var li = document.createElement("li");
+      var textnode = document.createTextNode(list.notes.slice(-1)[0].text);
+      li.appendChild(textnode);
+      ul.appendChild(li);
   }
 });
