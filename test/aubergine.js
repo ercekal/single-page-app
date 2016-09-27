@@ -8,4 +8,4 @@ var assert = {
  }
 };
 
-module.export = assert;
+module.exports = assert;
