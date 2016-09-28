@@ -19,7 +19,6 @@ ready(function(){
     var note = new Note(text);
     list.save(note);
     listNotes();
-    // document.getElementById("listing").innerHTML = list.notes[0].text;
   };
 
 
@@ -36,8 +35,8 @@ ready(function(){
      newItem.appendChild(a);
      ulist.appendChild(newItem);
  }
- document.getElementsByTagName("notes_list").onclick = function() {
-   var attribute = Element.getAttribute("target");
-   console.log(attribute);
+
+ document.getElementById("list").onclick = function() {
+   document.getElementById("single_view").innerHTML = list.notes[0].text;
  };
 });
