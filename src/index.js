@@ -27,9 +27,11 @@ ready(function(){
   function listNotes() {
       var ulist = document.getElementById("list");
       var newItem = document.createElement("li");
+      var length = ulist.children.length + 1;
       var a = document.createElement("a");
       var short = (list.notes.slice(-1)[0].abbreviated);
-      a.textContent = short;
+      a.textContent = short + "...";
+      newItem.setAttribute('id', 'element'+length);
       a.setAttribute('href', "#");
       newItem.appendChild(a);
       ulist.appendChild(newItem);
