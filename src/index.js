@@ -25,15 +25,19 @@ ready(function(){
 
 
   function listNotes() {
-      var ulist = document.getElementById("list");
-      var newItem = document.createElement("li");
-      var length = ulist.children.length + 1;
-      var a = document.createElement("a");
-      var short = (list.notes.slice(-1)[0].abbreviated);
-      a.textContent = short + "...";
-      newItem.setAttribute('id', 'element'+length);
-      a.setAttribute('href', "#");
-      newItem.appendChild(a);
-      ulist.appendChild(newItem);
-  }
+     var ulist = document.getElementById("list");
+     var newItem = document.createElement("li");
+     var a = document.createElement("a");
+     var short = (list.notes.slice(-1)[0].abbreviated);
+     a.textContent = short + "...";
+     a.setAttribute('href', "#");
+     newItem.setAttribute('id', 'notes_list');
+     newItem.setAttribute('target', (ulist.children.length));
+     newItem.appendChild(a);
+     ulist.appendChild(newItem);
+ }
+ document.getElementsByTagName("notes_list").onclick = function() {
+   var attribute = Element.getAttribute("target");
+   console.log(attribute);
+ };
 });
