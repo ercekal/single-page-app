@@ -13,6 +13,13 @@ TestObject.prototype =  {
     } else {
       console.log("      Passed:" + this.actual + " is equal to " + expectation);
     }
+  },
+  toContain: function(expectation){
+    if(this.actual.indexOf(expectation) !== -1) {
+      throw new Error("Expected " + this.actual + " to include " + expectation);
+    } else {
+      console.log("      Passed:" + this.actual + " includes " + expectation);
+    }
   }
 };
 
@@ -25,6 +32,13 @@ function describe(string, callback){
   console.log(string);
   callback();
 }
-function beforeEach(callback){
-  callback();
-}
+
+// var beforeEach = function(callback){
+//   this.callback = callback;
+// };
+//
+// // beforeEach.prototype = {
+// //   run: function(){
+// //     return this.callback;
+// //   }
+// // };

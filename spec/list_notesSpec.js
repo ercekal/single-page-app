@@ -1,6 +1,6 @@
-// beforeEach(function(){
-//   var list = new List();
-// });
+beforeEach(function(){
+  var list = new List();
+});
 
 describe('Testing list class', function(){
   it('should be empty initially', function(){
