@@ -19,10 +19,7 @@ ready(function(){
     var note = new Note(text);
     list.save(note);
     listNotes();
-    // document.getElementById("listing").innerHTML = list.notes[0].text;
   };
-
-
 
   function listNotes() {
      var ulist = document.getElementById("list");
