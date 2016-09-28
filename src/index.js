@@ -25,10 +25,13 @@ ready(function(){
 
 
   function listNotes() {
-      var ul = document.getElementById("list");
-      var li = document.createElement("li");
-      var textnode = document.createTextNode(list.notes.slice(-1)[0].text);
-      li.appendChild(textnode);
-      ul.appendChild(li);
+      var ulist = document.getElementById("list");
+      var newItem = document.createElement("li");
+      var a = document.createElement("a");
+      var short = (list.notes.slice(-1)[0].abbreviated);
+      a.textContent = short;
+      a.setAttribute('href', "#");
+      newItem.appendChild(a);
+      ulist.appendChild(newItem);
   }
 });
