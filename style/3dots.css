@@ -23,3 +23,12 @@ ul {
 #single_view {
   color: rgb(0,0,255);
 }
+
+.wrapper {
+    text-align: center;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+}
