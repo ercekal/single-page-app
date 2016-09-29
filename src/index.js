@@ -8,7 +8,7 @@ dots.ready(function(){
   var list = new List();
 
   dots.findElement('create_note').onclick = function(){
-    var text = document.getElementById('notes_input').value;
+    var text = dots.findElement('notes_input').value;
     var note = new Note(text);
     list.save(note);
     displayNote();
@@ -22,42 +22,40 @@ dots.ready(function(){
  }
 
  function createAbbreviatedNoteView() {
-   ulist = document.getElementById("list");
-   newItem = document.createElement("li");
-   a = document.createElement("a");
-   short = (list.notes.slice(-1)[0].abbreviated);
-   index = ulist.children.length;
-   a.textContent = short + "...";
-   a.setAttribute('href', "#");
-   newItem.setAttribute('id', 'notes_list');
-   newItem.setAttribute('target', index);
-   newItem.appendChild(a);
-   ulist.appendChild(newItem);
+    ulist = dots.findElement("list");
+    newItem = document.createElement("li");
+    a = document.createElement("a");
+    short = (list.notes.slice(-1)[0].abbreviated);
+    index = ulist.children.length;
+    a.textContent = short + "...";
+    a.setAttribute('href', "#");
+    dots.setAttributes(newItem, {'id': 'notes_list', 'target': index});
+    newItem.appendChild(a);
+    ulist.appendChild(newItem);
  }
 
  function storeFullNote() {
    var fullNote = list.notes[index].text;
    var paragraph = document.createElement("p");
-   paragraph.setAttribute('id', index);
-   paragraph.setAttribute('style', 'display: none');
-   var viewDiv = document.getElementById("single_view");
+   dots.setAttributes(paragraph, {'id': index, 'style': 'display: none'});
+   var viewDiv = dots.findElement("single_view");
    paragraph.textContent = fullNote;
    viewDiv.appendChild(paragraph);
   }
 
  function showFullNote(newItem, index) {
    newItem.addEventListener('click', function(){
-     document.getElementById("listing").style.display = 'none';
-     document.getElementById(index).style.display = 'inline';
-     document.getElementById('back_button').style.display = 'inline';
+     dots.hide("listing");
+     dots.show(index);
+     dots.show('back_button');
    });
  }
 
 function returnBack(index){
-  document.getElementById('back_button').addEventListener('click', function(){
-    document.getElementById("listing").style.display = 'inline';
-    document.getElementById(index).style.display = 'none';
-    document.getElementById('back_button').style.display = 'none';
+  dots.findElement('back_button').addEventListener('click', function(){
+    dots.show("listing");
+    dots.hide(index);
+    dots.hide('back_button');
     });
   }
 });

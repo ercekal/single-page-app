@@ -16,10 +16,16 @@ ThreeDots.prototype = {
   },
 
   show: function(element) {
-    findElement(element).style.display = 'inline';
+    this.findElement(element).style.display = 'inline';
   },
 
   hide: function(element) {
-    findElement(element).style.display = 'none';
+    this.findElement(element).style.display = 'none';
+  },
+
+  setAttributes: function(element, attributes) {
+    for(var key in attributes) {
+      element.setAttribute(key, attributes[key]);
+    }
   }
 };
