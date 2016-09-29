@@ -1,6 +1,6 @@
 beforeEach(function(){
   note = new Note("test");
-})
+});
 
 describe("Note class ", function(){
   it("should contain note text", function(){
