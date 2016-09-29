@@ -42,7 +42,6 @@ ready(function(){
    ulist.appendChild(newItem);
  }
 
-
  function storeFullNote() {
    var fullNote = list.notes[index].text;
    var paragraph = document.createElement("p");
@@ -66,9 +65,6 @@ function returnBack(index){
     document.getElementById("listing").style.display = 'inline';
     document.getElementById(index).style.display = 'none';
     document.getElementById('back_button').style.display = 'none';
-
+    });
+  }
 });
- }
-
- }
-);
