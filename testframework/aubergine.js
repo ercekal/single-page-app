@@ -24,7 +24,9 @@ TestObject.prototype =  {
 };
 
 
+
 function it(string, callback){
+  beforeEachFunction();
   console.log("  " + string);
   callback();
 }
@@ -33,12 +35,6 @@ function describe(string, callback){
   callback();
 }
 
-// var beforeEach = function(callback){
-//   this.callback = callback;
-// };
-//
-// // beforeEach.prototype = {
-// //   run: function(){
-// //     return this.callback;
-// //   }
-// // };
+function beforeEach(callback){
+   beforeEachFunction = callback;
+}
