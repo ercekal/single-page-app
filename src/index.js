@@ -4,14 +4,6 @@
 
 var library = new Library(document)
 
-// function ready(fn) {
-//   if(document.readyState != 'loading') {
-//     fn();
-//   } else {
-//     document.addEventListener('DOMContentLoaded', fn);
-//   }
-// }
-
 library.ready(function(){
   // use JS to listen to form text input and submit
   var list = new List();
