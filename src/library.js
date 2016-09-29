@@ -1,8 +1,8 @@
-var Library = function Library(document) {
+var ThreeDots = function ThreeDots(document) {
   this.document = document
 };
 
-Library.prototype = {
+ThreeDots.prototype = {
   ready: function(fn) {
     if(this.document.readyState != 'loading') {
       fn();
@@ -12,7 +12,7 @@ Library.prototype = {
   },
 
   findElement: function(element) {
-    this.document.getElementById(element);
+    return this.document.getElementById(element);
   },
 
   show: function(element) {
