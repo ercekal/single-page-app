@@ -38,6 +38,7 @@ ready(function(){
      a.setAttribute('href', "#");
      newItem.setAttribute('id', 'notes_list');
      newItem.setAttribute('target', index);
+     newItem.setAttribute('align', "center");
      newItem.appendChild(a);
      ulist.appendChild(newItem);
      var fullNote = list.notes[index].text;

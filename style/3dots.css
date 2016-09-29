@@ -1,0 +1,25 @@
+input {
+    width: 200px;
+    height: 100px;
+    text-align: center;
+}
+
+body {
+    background-color: lightblue;
+    padding-top: 50px;
+    padding-bottom: 30px;
+
+}
+
+h1 {
+    color: navy;
+    margin-left: 20px;
+}
+
+ul {
+    list-style-position: inside;
+}
+
+#single_view {
+  color: rgb(0,0,255);
+}
