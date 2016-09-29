@@ -18,14 +18,31 @@ ready(function(){
     var text = document.getElementById('notes_input').value;
     var note = new Note(text);
     list.save(note);
-    listNotes();
+    displayNote();
   };
 
-   function getAttr(att) {
-     att.getAttribute(target);
-     console.log(target);
-   }
+  function displayNote() {
+    createAbbreviatedNoteView();
+    storeFullNote();
+    showFullNote(newItem, index);
+    returnBack(index);
+ }
 
+ function createAbbreviatedNoteView() {
+   ulist = document.getElementById("list");
+   newItem = document.createElement("li");
+   a = document.createElement("a");
+   short = (list.notes.slice(-1)[0].abbreviated);
+   index = ulist.children.length;
+   a.textContent = short + "...";
+   a.setAttribute('href', "#");
+   newItem.setAttribute('id', 'notes_list');
+   newItem.setAttribute('target', index);
+   newItem.appendChild(a);
+   ulist.appendChild(newItem);
+ }
+
+<<<<<<< HEAD
   function listNotes() {
      var ulist = document.getElementById("list");
      var newItem = document.createElement("li");
@@ -50,9 +67,19 @@ ready(function(){
      viewDiv.appendChild(paragraph);
      addLiListener(newItem, index);
      returnBack(index);
+=======
+ function storeFullNote() {
+   var fullNote = list.notes[index].text;
+   var paragraph = document.createElement("p");
+   paragraph.setAttribute('id', index);
+   paragraph.setAttribute('style', 'display: none');
+   var viewDiv = document.getElementById("single_view");
+   paragraph.textContent = fullNote;
+   viewDiv.appendChild(paragraph);
+>>>>>>> aae8d669bbe9e78499e59359366fa91e428c8c64
  }
 
- function addLiListener(newItem, index) {
+ function showFullNote(newItem, index) {
    newItem.addEventListener('click', function(){
      document.getElementById("listing").style.display = 'none';
      document.getElementById(index).style.display = 'inline';
